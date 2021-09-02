@@ -1,0 +1,202 @@
+{
+	"initialState": "main.1",
+	"haltingStates": ["halt.1"],
+	"states": {
+		"detachPrior.1": [{
+			"action": "OL",
+			"next": "jumpLeft(detachPriorJumpLeftDone(incrementCurrent, halt)).1"
+		}, {
+			"action": "OL",
+			"next": "jumpLeft(detachPriorJumpLeftDone(incrementCurrent, halt)).1"
+		}],
+		"detachPriorGood(incrementCurrent).1": [{
+			"action": "1R",
+			"next": "detachPriorGood(incrementCurrent).2"
+		}, {
+			"action": "1R",
+			"next": "detachPriorGood(incrementCurrent).2"
+		}],
+		"detachPriorGood(incrementCurrent).2": [{
+			"action": "0R",
+			"next": "jumpRight(incrementCurrent).1"
+		}, {
+			"action": "0R",
+			"next": "jumpRight(incrementCurrent).1"
+		}],
+		"detachPriorJumpLeftDone(halt).1": [{
+			"action": "0R",
+			"next": "detachPriorJumpLeftDone(halt).2"
+		}, {
+			"action": "0R",
+			"next": "detachPriorJumpLeftDone(halt).2"
+		}],
+		"detachPriorJumpLeftDone(halt).2": [{
+			"action": "1R",
+			"next": "jumpRight(halt).1"
+		}, {
+			"action": "1R",
+			"next": "jumpRight(halt).1"
+		}],
+		"detachPriorJumpLeftDone(incrementCurrent, halt).1": [{
+			"action": "OL",
+			"next": "detachPriorJumpLeftDone(incrementCurrent, halt).2"
+		}, {
+			"action": "OL",
+			"next": "detachPriorJumpLeftDone(incrementCurrent, halt).2"
+		}],
+		"detachPriorJumpLeftDone(incrementCurrent, halt).2": [{
+			"action": "1L",
+			"next": "detachPriorJumpLeftDone(halt).1"
+		}, {
+			"action": "1L",
+			"next": "detachPriorGood(incrementCurrent).1"
+		}],
+		"halt.1": [{
+			"action": "0R",
+			"next": "halt.1"
+		}, {
+			"action": "0R",
+			"next": "halt.1"
+		}],
+		"incrementCurrent.1": [{
+			"action": "OL",
+			"next": "incrementCurrent.2"
+		}, {
+			"action": "OL",
+			"next": "incrementCurrent.2"
+		}],
+		"incrementCurrent.2": [{
+			"action": "OL",
+			"next": "incrementCurrent.3"
+		}, {
+			"action": "OL",
+			"next": "incrementCurrent.3"
+		}],
+		"incrementCurrent.3": [{
+			"action": "0R",
+			"next": "splitDone.1"
+		}, {
+			"action": "0R",
+			"next": "splitDone.1"
+		}],
+		"jumpLeft(detachPriorJumpLeftDone(incrementCurrent, halt)).1": [{
+			"action": "1L",
+			"next": "jumpLeftFindOne(detachPriorJumpLeftDone(incrementCurrent, halt)).1"
+		}, {
+			"action": "1L",
+			"next": "jumpLeft(detachPriorJumpLeftDone(incrementCurrent, halt)).1"
+		}],
+		"jumpLeftFindOne(detachPriorJumpLeftDone(incrementCurrent, halt)).1": [{
+			"action": "OL",
+			"next": "jumpLeftFindOne(detachPriorJumpLeftDone(incrementCurrent, halt)).1"
+		}, {
+			"action": "OL",
+			"next": "jumpLeftTerminal(detachPriorJumpLeftDone(incrementCurrent, halt)).1"
+		}],
+		"jumpLeftTerminal(detachPriorJumpLeftDone(incrementCurrent, halt)).1": [{
+			"action": "1R",
+			"next": "detachPriorJumpLeftDone(incrementCurrent, halt).1"
+		}, {
+			"action": "1R",
+			"next": "detachPriorJumpLeftDone(incrementCurrent, halt).1"
+		}],
+		"jumpRight(halt).1": [{
+			"action": "0R",
+			"next": "jumpRightOnes(halt).1"
+		}, {
+			"action": "0R",
+			"next": "jumpRight(halt).1"
+		}],
+		"jumpRight(incrementCurrent).1": [{
+			"action": "0R",
+			"next": "jumpRightOnes(incrementCurrent).1"
+		}, {
+			"action": "0R",
+			"next": "jumpRight(incrementCurrent).1"
+		}],
+		"jumpRightOnes(halt).1": [{
+			"action": "1R",
+			"next": "halt.1"
+		}, {
+			"action": "1R",
+			"next": "jumpRightOnes(halt).1"
+		}],
+		"jumpRightOnes(incrementCurrent).1": [{
+			"action": "1R",
+			"next": "incrementCurrent.1"
+		}, {
+			"action": "1R",
+			"next": "jumpRightOnes(incrementCurrent).1"
+		}],
+		"main.1": [{
+			"action": "1R",
+			"next": "main.2"
+		}, {
+			"action": "1R",
+			"next": "main.2"
+		}],
+		"main.2": [{
+			"action": "1R",
+			"next": "main.3"
+		}, {
+			"action": "1R",
+			"next": "main.3"
+		}],
+		"main.3": [{
+			"action": "0R",
+			"next": "search.1"
+		}, {
+			"action": "0R",
+			"next": "search.1"
+		}],
+		"search.1": [{
+			"action": "OL",
+			"next": "search.2"
+		}, {
+			"action": "OL",
+			"next": "search.2"
+		}],
+		"search.2": [{
+			"action": "OL",
+			"next": "search.3"
+		}, {
+			"action": "OL",
+			"next": "search.3"
+		}],
+		"search.3": [{
+			"action": "OL",
+			"next": "search.4"
+		}, {
+			"action": "OL",
+			"next": "search.4"
+		}],
+		"search.4": [{
+			"action": "0R",
+			"next": "split.1"
+		}, {
+			"action": "0R",
+			"next": "split.1"
+		}],
+		"split.1": [{
+			"action": "1R",
+			"next": "split.2"
+		}, {
+			"action": "1R",
+			"next": "split.2"
+		}],
+		"split.2": [{
+			"action": "0R",
+			"next": "detachPrior.1"
+		}, {
+			"action": "0R",
+			"next": "detachPrior.1"
+		}],
+		"splitDone.1": [{
+			"action": "0R",
+			"next": "splitDone.1"
+		}, {
+			"action": "0R",
+			"next": "splitDone.1"
+		}]
+	}
+}
